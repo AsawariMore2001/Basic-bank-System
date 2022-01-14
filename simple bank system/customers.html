@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank customer details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> -->
+</head>
+
+
+<!-- CSS style sheet -->
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- fontawesome -->
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js" charset="utf-8"></script>
+
+
+
+<!-- bootstrap script -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+</head>
+
+<body id="bg">
+    <h1 id="head">
+        <center>Welcome to Hogward Bank!</center>
+    </h1>
+
+    <section id="heading">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ol class="navbar-nav ml-auto">
+                        <oi class="nav-item1">
+                            <a class="nav-link" href="home.html" style="color: white">Home</a>
+                        </oi>
+                        <oi class="nav-item1 ">
+                            <a class="nav-link" href="customers.html" style="color: white;">View Customers</a>
+                        </oi>
+                        <oi class="nav-item1 active ">
+                            <a class="nav-link" href="about.html">About Hogward Bank</a>
+                        </oi>
+                        </ul>
+                </div>
+            </nav>
+        </div>
+        </div>
+
+    </section>
+
+
+    <div class="my-info text-center" style="padding:50px">
+
+        <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney"
+            style="color: white; background-color: rgb(128, 0, 128);">Send Money</button>
+        <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory"
+            style="color: white; background-color: rgb(128, 0, 128);">Transactions History</a>
+
+        <div style="text-align: center;padding-top: 20px;">
+            <h2 style="color: rgb(128,0,128); font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif;">
+                Customer list</h2>
+
+        </div>
+
+        <section id="main" class="coloured-section">
+
+            <!-- Modal send money -->
+            <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="input-group mb-3">
+                                    <input type="text" id="enterSName" class="form-control"
+                                        placeholder="Sender's Username" aria-label="Sender's Username"
+                                        aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="text" id="enterName" class="form-control"
+                                        placeholder="Recipient's username" aria-label="Recipient's username"
+                                        aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2">@email.com</span>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">₹</span>
+                                    </div>
+                                    <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                        aria-label="Amount (to the nearest dollar)">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" onclick="sendMoney()" class="btn btn-success"
+                                data-dismiss="modal">Send Money</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal transaction History-->
+            <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <ol id="transaction-history-body">
+
+                            </ol>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- table  -->
+            <div class="container" style="padding:10px; padding-bottom: 2px;">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr class="table-danger">
+                                <th scope="col">Sl. No.</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Bank Balance(in Rs.)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">1</td>
+                                <td>Riya Gangapurwala Flynn</td>
+                                <td>riya@email.com</td>
+                                <td>
+                                    <p id="riyaBankBalance">85575</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">2</td>
+                                <td>Rutuja Gosavi</td>
+                                <td>rutuja@email.com</td>
+                                <td>
+                                    <p id="rutujaBankBalance">74000</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">3</td>
+                                <td>Parvinder Sodhi</td>
+                                <td>parvinder@email.com</td>
+                                <td>
+                                    <p id="parvinderBankBalance">621133</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">4</td>
+                                <td>Akanksha wagh</td>
+                                <td>akanksha@email.com</td>
+                                <td>
+                                    <p id="akankshaBankBalance">60030</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">5</td>
+                                <td>Faiza Tanveer</td>
+                                <td>faiza@email.com</td>
+                                <td>
+                                    <p id="faizaBankBalance">63600</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">6</td>
+                                <td>Steve Rogers</td>
+                                <td>steve@email.com</td>
+                                <td>
+                                    <p id="steveBankBalance">103630</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">7</td>
+                                <td>Peter Parker</td>
+                                <td>peter@email.com</td>
+                                <td>
+                                    <p id="peterBankBalance">51600</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">8</td>
+                                <td>Natasha Romanoff</td>
+                                <td>natasha@email.com</td>
+                                <td>
+                                    <p id="natashaBankBalance">55653</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">9</td>
+                                <td>Tony Stark</td>
+                                <td>tony@email.com</td>
+                                <td>
+                                    <p id="tonyBankBalance">1853400</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">10</td>
+                                <td>James Buchanan Barnes</td>
+                                <td>james@email.com</td>
+                                <td>
+                                    <p id="buckyBankBalance">135330</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+        <footer class="white-section" id="footer" style="font-size: 20px; padding: 0% 0%; text-align: center;">
+
+            <ul class="social-icons">
+                Contact Me:
+                <oi><a target="_blank" class="github" href="https://github.com/AsawariMore2001/AsawariMore2001"
+                        style="color:rgb(116, 0, 116);"><i class="fab fa-github fa-2x"></i></a></li>
+
+                    <oi><a target="_blank" class="linkedin" href="https://www.linkedin.com/in/asawari-more-94101b201/"
+                            style="color:rgb(116, 0, 116);"><i class="fab fa-linkedin fa-2x"></i></a></li>
+            </ul>
+            <span>©ASAWARI MORE</span>
+
+        </footer>
+</body>
+
+</html>
